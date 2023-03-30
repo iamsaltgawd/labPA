@@ -55,12 +55,6 @@ void reverse() {
 		enQueue(q, i);
 	}
 
-	while (!isEmptyQ(q)) {
-		printf("%c ", deQueue(q));
-	}
-
-	printf("\n");
-
 	Node *top = NULL;
 	Data aux;
 	
@@ -69,8 +63,12 @@ void reverse() {
 		push(&top, aux);
 	}
 
-	while (isEmpty(top)) {
-		printf("%c", pop(&top));
+	while (!isEmpty(top)) {
+		enQueue(q, pop(&top));
 	}
-	
+
+	while (!isEmptyQ(q)) {
+		printf("%c", deQueue(q));
+	}
+	printf("\n");
 }
