@@ -48,26 +48,29 @@ void deleteQueue(Queue*q){
 
 void reverse() {
 	Queue *q = createQueue();
-	int v[]={0,1,2,3,4,5}, n = 6, i;
+	int n = 6;
+	Data i;
 
-	for (i = 0; i < n; i++) {
+	for (i = 'a'; i < 'f'; i++) {
 		enQueue(q, i);
 	}
 
+	while (!isEmptyQ(q)) {
+		printf("%c ", deQueue(q));
+	}
+
+	printf("\n");
+
 	Node *top = NULL;
 	Data aux;
-
+	
 	while (!isEmptyQ(q)) {
 		aux = deQueue(q);
 		push(&top, aux);
 	}
 
-	while (q->front != NULL) {
-		printf("%d ", deQueue(q));
+	while (isEmpty(top)) {
+		printf("%c", pop(&top));
 	}
-
-	while (top != NULL) {
-		pop(&top);
-	}
-	deleteQueue(q);
+	
 }
