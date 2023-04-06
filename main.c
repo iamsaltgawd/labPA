@@ -1,10 +1,10 @@
-#include "cozi.h"
+#include "lab.h"
+
+
 
 int main(void)
 {
-//    checkP();
-
-    reverse();
-
+    displayleaves();
+    displaypaths();
     return 0;
 }
